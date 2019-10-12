@@ -31,7 +31,44 @@ public class P5{
 	}
 
 	public String getPermutation(int A, int B) {
+        // not valid
+       if(B > fact(A)) return "";
     
+        ArrayList<Integer> list = new ArrayList();
+        for(int i=1;i<=A;i++) list.add(i);
+        
+        return getPermutation(list, B-1);
+        
+        
     }
+    
+    public String getPermutation(ArrayList<Integer> list, int B) {
+    
+        int n = list.size();
+        
+        if(n==0) return "";
+        
+        int fact_n = fact(n-1);
+        int index = B / fact_n;
+        int data = list.get(index);
+        list.remove(index);
+        B %= fact_n;
+        return data + getPermutation(list, B);
+    }
+    
+    
+    
+    public int fact(int n){
+        
+        if(n>12) return Integer.MAX_VALUE;    
+        
+        int fact = 1;
+        
+        for(int i=2;i<=n;i++) fact *= i;
+        
+        return fact;
+    }
+    
+    
 
 }
