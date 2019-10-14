@@ -9,3 +9,13 @@ Palindrome Partitioning
 Number of Squareful Arrays	
 
 
+========================
+
+
+
+Modular Expression	
+Generate all Parentheses II	
+Sudoku
+Letter Phone	
+
+
